@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Pro Gym - Your Ultimate Fitness Destination</title>
+    <meta name="description" content="Join Fitness Pro Gym and transform your body. State-of-the-art equipment, expert trainers, and diverse fitness classes. Start your fitness journey today!">
+    <meta name="keywords" content="gym, fitness, workout, personal training, gym membership, fitness classes">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #00d4ff;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 26, 46, 0.7), rgba(22, 33, 62, 0.7)), url('https://private-us-east-1.manuscdn.com/sessionFile/EVh8OT6M7099Afk0UuILNT/sandbox/q57wQgXJbCY7BTuJ0IQbzj-img-1_1770888241000_na1fn_Z3ltLWhlcm8tbWFpbg.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvRVZoOE9UNk03MDk5QWZrMFV1SUxOVC9zYW5kYm94L3E1N3dRZ1hKYkNZN0JUdUowSVFiemotaW1nLTFfMTc3MDg4ODI0MTAwMF9uYTFmbl9aM2x0TFdobGNtOHRiV0ZwYmcucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=uI4aWo7fscFeKbcd7rvaTBGEw2EVbwnHmH3T12Qcphi-QmcnDlFFjXcvpJhgK4qJ~~Qevq6OAGpPyV634QG39J-SIlUIxTyKgTVA4jSN~G1c5TIcH4wswsE3IklP48KDhAeNOopj-mqGYrz3Z0M75wV8GK4Uf6blMtLZtEezEzpvPV6yyrVlOMxH0fLUpmKos1A5qwZvC2gxHphC-NxkR8elhh9qlfSUlZfOWJjGC3pKAu~psnHk~uxwCkDj775icicDNpV14OdBiQAWIQLqSqARCTEOkr-dq7tDjYscig4lbZ0epLzUnXI~NTuTdAXu87b83N~-X61wcpU9ypQdJA__') center/cover;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+        }
+
+        /* Features Section */
+        .features {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a2e;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Membership Plans */
+        .membership-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 4rem 20px;
+            margin: 4rem 0;
+        }
+
+        .membership-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 3rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .membership-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .membership-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .membership-card.featured {
+            border: 3px solid #00d4ff;
+            transform: scale(1.05);
+        }
+
+        .membership-card:hover {
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.3);
+        }
+
+        .membership-card h3 {
+            font-size: 1.5rem;
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            color: #00d4ff;
+            font-weight: 800;
+            margin: 1rem 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .membership-features {
+            list-style: none;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+
+        .membership-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            color: #666;
+        }
+
+        .membership-features li:before {
+            content: "✓ ";
+            color: #00d4ff;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Classes Section */
+        .classes-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 20px;
+        }
+
+        .classes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .class-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .class-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .class-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .class-info {
+            padding: 1.5rem;
+        }
+
+        .class-info h4 {
+            font-size: 1.2rem;
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .class-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Trainers Section */
+        .trainers-section {
+            background: #f8f9fa;
+            padding: 4rem 20px;
+            margin: 4rem 0;
+        }
+
+        .trainers-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .trainers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .trainer-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .trainer-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .trainer-info {
+            padding: 1.5rem;
+        }
+
+        .trainer-info h4 {
+            font-size: 1.2rem;
+            color: #1a1a2e;
+            margin-bottom: 0.3rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .trainer-specialty {
+            color: #00d4ff;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 4rem 20px;
+            color: white;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item strong {
+            color: #00d4ff;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f0f1e;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feature-card, .membership-card, .class-card, .trainer-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">💪 FITPRO</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#membership">Membership</a></li>
+                <li><a href="#classes">Classes</a></li>
+                <li><a href="#trainers">Trainers</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Transform Your Body, Transform Your Life</h1>
+            <p>Join thousands of members achieving their fitness goals</p>
+            <button class="cta-button">Start Your Journey Today</button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature-card">
+            <div class="feature-icon">🏋️</div>
+            <h3>State-of-the-Art Equipment</h3>
+            <p>Access the latest fitness equipment and technology to maximize your workouts</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">👨‍🏫</div>
+            <h3>Expert Trainers</h3>
+            <p>Get guidance from certified fitness professionals with years of experience</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3>Personalized Plans</h3>
+            <p>Customized workout and nutrition plans tailored to your goals</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🌟</div>
+            <h3>Community Support</h3>
+            <p>Join a supportive community of fitness enthusiasts and achievers</p>
+        </div>
+    </section>
+
+    <!-- Membership Plans -->
+    <section class="membership-section" id="membership">
+        <div class="membership-container">
+            <h2 class="section-title">Choose Your Membership Plan</h2>
+            <div class="membership-cards">
+                <div class="membership-card">
+                    <h3>Basic</h3>
+                    <div class="price">₹2,999<span style="font-size: 1rem;">/month</span></div>
+                    <ul class="membership-features">
+                        <li>Gym access (peak hours)</li>
+                        <li>Basic equipment access</li>
+                        <li>Locker facility</li>
+                        <li>Water & towel service</li>
+                    </ul>
+                    <button class="cta-button">Join Now</button>
+                </div>
+                <div class="membership-card featured">
+                    <h3>Premium</h3>
+                    <div class="price">₹5,999<span style="font-size: 1rem;">/month</span></div>
+                    <ul class="membership-features">
+                        <li>24/7 gym access</li>
+                        <li>All equipment access</li>
+                        <li>Group classes included</li>
+                        <li>Personal trainer (4 sessions)</li>
+                        <li>Nutrition consultation</li>
+                    </ul>
+                    <button class="cta-button">Join Now</button>
+                </div>
+                <div class="membership-card">
+                    <h3>Elite</h3>
+                    <div class="price">₹9,999<span style="font-size: 1rem;">/month</span></div>
+                    <ul class="membership-features">
+                        <li>24/7 priority access</li>
+                        <li>Personal trainer (unlimited)</li>
+                        <li>All group classes</li>
+                        <li>Nutrition & wellness coaching</li>
+                        <li>Recovery services</li>
+                        <li>VIP lounge access</li>
+                    </ul>
+                    <button class="cta-button">Join Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classes Section -->
+    <section class="classes-section" id="classes">
+        <h2 class="section-title">Our Fitness Classes</h2>
+        <div class="classes-grid">
+            <div class="class-card">
+                <img src="https://private-us-east-1.manuscdn.com/sessionFile/EVh8OT6M7099Afk0UuILNT/sandbox/q57wQgXJbCY7BTuJ0IQbzj-img-3_1770888238000_na1fn_Z3ltLWNhcmRpby1jbGFzcw.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvRVZoOE9UNk03MDk5QWZrMFV1SUxOVC9zYW5kYm94L3E1N3dRZ1hKYkNZN0JUdUowSVFiemotaW1nLTNfMTc3MDg4ODIzODAwMF9uYTFmbl9aM2x0TFdOaGNtUnBieTFqYkdGemN3LnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=SM0Q2D8TzuoH9CH-9eqT4ao~b-NvMCXo6Ez6jiK8hrsSuvlRZXZGoVq4EOeyCD2M4djlzGfamiDUsDdRexKE~4QCLhTfS2I1LnJHZxr6IMRQSXGQL38nJubHkCnrD9li28suElBxJyqQBOyW-HOg9t2RbO0qP6MM6khzpfDnMHTU23S5BebfgE3ZgSpTldbRz1AyWQfXi1l~bfRWCTsFq~aRyjNXHkgU2jLV2V2DcfGpn0MmVteHhpbPrjUCOaclivqFc6KTpOa8qI51mAy8K7ugDQWUysFN53Ju2NsV-NVQqHHtMF7RsuhhLb60jlei32CjEd30luk3zx3ik~HXUA__" alt="Cardio Class" class="class-image">
+                <div class="class-info">
+                    <h4>Cardio Blast</h4>
+                    <p>High-energy cardio workout to boost your endurance and burn calories. Mon & Wed, 6 PM</p>
+                </div>
+            </div>
+            <div class="class-card">
+                <img src="https://private-us-east-1.manuscdn.com/sessionFile/EVh8OT6M7099Afk0UuILNT/sandbox/q57wQgXJbCY7BTuJ0IQbzj-img-2_1770888235000_na1fn_Z3ltLXN0cmVuZ3RoLXRyYWluaW5n.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvRVZoOE9UNk03MDk5QWZrMFV1SUxOVC9zYW5kYm94L3E1N3dRZ1hKYkNZN0JUdUowSVFiemotaW1nLTJfMTc3MDg4ODIzNTAwMF9uYTFmbl9aM2x0TFhOMGNtVnVaM1JvTFhSeVlXbHVhVzVuLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=boeqMme8Ii1BaydCjXD4ZkMj7NDdoG-da8ntsZJb1EYnOvBhZKcxDwfYIEv~LYKXwvKhkCr6egRxzZCMuKvrZAGZeqEuSOerIIZo2y~35wiQ08BGqlQKALcdIYlcT~EZUWHF8Jx3bl16QA5RTe2SHNXeI-60JEjCpnvWnR7a~XHFQK9rt~~lb8Cc1B1VQ9YfeAk6WqPQoXvbCf1THb4BrMW8fsRNB49UM4RJ8~i4psmwWvNz7tGlCaNQtkNdpL9ullOVMoX5LoeEd9wtFu4jCC6pXMYvI2AXbRh1LSQtP5IphJUpJrS-S~eDEy48-ibNuTXv7BlN2GP4q9qeMqnZIg__" alt="Strength Training" class="class-image">
+                <div class="class-info">
+                    <h4>Strength Training</h4>
+                    <p>Build muscle and increase strength with guided weight training. Tue & Thu, 7 PM</p>
+                </div>
+            </div>
+            <div class="class-card">
+                <img src="https://private-us-east-1.manuscdn.com/sessionFile/EVh8OT6M7099Afk0UuILNT/sandbox/q57wQgXJbCY7BTuJ0IQbzj-img-4_1770888233000_na1fn_Z3ltLXlvZ2Etd2VsbG5lc3M.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvRVZoOE9UNk03MDk5QWZrMFV1SUxOVC9zYW5kYm94L3E1N3dRZ1hKYkNZN0JUdUowSVFiemotaW1nLTRfMTc3MDg4ODIzMzAwMF9uYTFmbl9aM2x0TFhsdloyRXRkMlZzYkc1bGMzTS5wbmc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=c1VMzksuZgUA~hdYJSLVwyUcmkI5Tma0DH38IU04ngl37POy~bweibPJrFCOfloDS0c2VkXh0Q5aBQhQvFgGIiGINlqQjQUhB7~Yd8F2iIYj5RKG8bxXKLVnzyPcShn~~5oK0GHCRIW4dQHkiGNRza3INmQbkVHxUjrX5bd2Q-4xu5lxIXsxjua-2cbJj1BCy4-N~KeiUvI4G2g83xwALVrkbR0LAI5czwEz7zoQTU4NTpd6W2DCiOJYj1cANhFQzfgznnFHBg8OuJK05csv~vurJcoNKNf7dGcQBp0mnWLviISdT4gGMtwc1EVFxMKkZEEfMI3gs0QwOYbyU4LQNA__" alt="Yoga & Wellness" class="class-image">
+                <div class="class-info">
+                    <h4>Yoga & Wellness</h4>
+                    <p>Relax and rejuvenate with our calming yoga and meditation sessions. Sat & Sun, 9 AM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainers Section -->
+    <section class="trainers-section" id="trainers">
+        <div class="trainers-container">
+            <h2 class="section-title">Meet Our Expert Trainers</h2>
+            <div class="trainers-grid">
+                <div class="trainer-card">
+                    <img src="https://private-us-east-1.manuscdn.com/sessionFile/EVh8OT6M7099Afk0UuILNT/sandbox/q57wQgXJbCY7BTuJ0IQbzj-img-2_1770888235000_na1fn_Z3ltLXN0cmVuZ3RoLXRyYWluaW5n.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvRVZoOE9UNk03MDk5QWZrMFV1SUxOVC9zYW5kYm94L3E1N3dRZ1hKYkNZN0JUdUowSVFiemotaW1nLTJfMTc3MDg4ODIzNTAwMF9uYTFmbl9aM2x0TFhOMGNtVnVaM1JvTFhSeVlXbHVhVzVuLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=boeqMme8Ii1BaydCjXD4ZkMj7NDdoG-da8ntsZJb1EYnOvBhZKcxDwfYIEv~LYKXwvKhkCr6egRxzZCMuKvrZAGZeqEuSOerIIZo2y~35wiQ08BGqlQKALcdIYlcT~EZUWHF8Jx3bl16QA5RTe2SHNXeI-60JEjCpnvWnR7a~XHFQK9rt~~lb8Cc1B1VQ9YfeAk6WqPQoXvbCf1THb4BrMW8fsRNB49UM4RJ8~i4psmwWvNz7tGlCaNQtkNdpL9ullOVMoX5LoeEd9wtFu4jCC6pXMYvI2AXbRh1LSQtP5IphJUpJrS-S~eDEy48-ibNuTXv7BlN2GP4q9qeMqnZIg__" alt="Trainer" class="trainer-image">
+                    <div class="trainer-info">
+                        <h4>Raj Kumar</h4>
+                        <div class="trainer-specialty">Strength & Conditioning</div>
+                        <p>10+ years experience in bodybuilding and strength training</p>
+                    </div>
+                </div>
+                <div class="trainer-card">
+                    <img src="https://private-us-east-1.manuscdn.com/sessionFile/EVh8OT6M7099Afk0UuILNT/sandbox/q57wQgXJbCY7BTuJ0IQbzj-img-3_1770888238000_na1fn_Z3ltLWNhcmRpby1jbGFzcw.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvRVZoOE9UNk03MDk5QWZrMFV1SUxOVC9zYW5kYm94L3E1N3dRZ1hKYkNZN0JUdUowSVFiemotaW1nLTNfMTc3MDg4ODIzODAwMF9uYTFmbl9aM2x0TFdOaGNtUnBieTFqYkdGemN3LnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=SM0Q2D8TzuoH9CH-9eqT4ao~b-NvMCXo6Ez6jiK8hrsSuvlRZXZGoVq4EOeyCD2M4djlzGfamiDUsDdRexKE~4QCLhTfS2I1LnJHZxr6IMRQSXGQL38nJubHkCnrD9li28suElBxJyqQBOyW-HOg9t2RbO0qP6MM6khzpfDnMHTU23S5BebfgE3ZgSpTldbRz1AyWQfXi1l~bfRWCTsFq~aRyjNXHkgU2jLV2V2DcfGpn0MmVteHhpbPrjUCOaclivqFc6KTpOa8qI51mAy8K7ugDQWUysFN53Ju2NsV-NVQqHHtMF7RsuhhLb60jlei32CjEd30luk3zx3ik~HXUA__" alt="Trainer" class="trainer-image">
+                    <div class="trainer-info">
+                        <h4>Priya Singh</h4>
+                        <div class="trainer-specialty">Cardio & HIIT</div>
+                        <p>Certified in aerobics and high-intensity interval training</p>
+                    </div>
+                </div>
+                <div class="trainer-card">
+                    <img src="https://private-us-east-1.manuscdn.com/sessionFile/EVh8OT6M7099Afk0UuILNT/sandbox/q57wQgXJbCY7BTuJ0IQbzj-img-4_1770888233000_na1fn_Z3ltLXlvZ2Etd2VsbG5lc3M.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvRVZoOE9UNk03MDk5QWZrMFV1SUxOVC9zYW5kYm94L3E1N3dRZ1hKYkNZN0JUdUowSVFiemotaW1nLTRfMTc3MDg4ODIzMzAwMF9uYTFmbl9aM2x0TFhsdloyRXRkMlZzYkc1bGMzTS5wbmc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=c1VMzksuZgUA~hdYJSLVwyUcmkI5Tma0DH38IU04ngl37POy~bweibPJrFCOfloDS0c2VkXh0Q5aBQhQvFgGIiGINlqQjQUhB7~Yd8F2iIYj5RKG8bxXKLVnzyPcShn~~5oK0GHCRIW4dQHkiGNRza3INmQbkVHxUjrX5bd2Q-4xu5lxIXsxjua-2cbJj1BCy4-N~KeiUvI4G2g83xwALVrkbR0LAI5czwEz7zoQTU4NTpd6W2DCiOJYj1cANhFQzfgznnFHBg8OuJK05csv~vurJcoNKNf7dGcQBp0mnWLviISdT4gGMtwc1EVFxMKkZEEfMI3gs0QwOYbyU4LQNA__" alt="Trainer" class="trainer-image">
+                    <div class="trainer-info">
+                        <h4>Anjali Verma</h4>
+                        <div class="trainer-specialty">Yoga & Wellness</div>
+                        <p>Certified yoga instructor with expertise in holistic wellness</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <div class="contact-item">
+                    <strong>Address:</strong><br>
+                    123 Fitness Street, Gym Plaza<br>
+                    New Delhi, India 110001
+                </div>
+                <div class="contact-item">
+                    <strong>Phone:</strong><br>
+                    +91 98765 43210<br>
+                    +91 11 4567 8900
+                </div>
+                <div class="contact-item">
+                    <strong>Email:</strong><br>
+                    info@fitprogym.com<br>
+                    support@fitprogym.com
+                </div>
+                <div class="contact-item">
+                    <strong>Hours:</strong><br>
+                    Mon - Fri: 6 AM - 11 PM<br>
+                    Sat - Sun: 7 AM - 10 PM
+                </div>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="tel" placeholder="Your Phone">
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Fitness Pro Gym. All rights reserved. | Transform Your Body, Transform Your Life</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .membership-card, .class-card, .trainer-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
